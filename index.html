@@ -5,16 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Input with Eye Button</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        .password-container {
+            position: relative;
+            margin-bottom: 1rem;
+            display: flex;
+        }
+
+        #password {
+            padding: 3px;
+            border-radius: 10px;
+        }
+
+        .password-toggle {
+            cursor: pointer;
+            transform: translateX(-25px);
+            margin-top: 3px;
+        }
+    </style>
 </head>
 
 <body>
+
     <div class="password-container">
         <input type="password" id="password" placeholder="Enter your password">
         <span class="password-toggle" onclick="togglePasswordVisibility()">
             <img src="svg/view.svg" alt="eye" id="image">
         </span>
     </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            let img = document.getElementById("image");
+            let passwordInput = document.getElementById("password");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                img.src = "svg/view-off.svg"
+            } 
+            else {
+                passwordInput.type = "password";
+                img.src = "svg/view.svg"
+            }
+        }
+    </script>
+
 </body>
 
 </html>
