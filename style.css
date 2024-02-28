@@ -1,0 +1,16 @@
+.password-container {
+    position: relative;
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+#password {
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.password-toggle {
+    cursor: pointer;
+    transform: translateX(-25px);
+    margin-top: 3px;
+}
